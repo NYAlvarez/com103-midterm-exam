@@ -3,9 +3,9 @@ weekly_budget = int(input("Enter your Weekly Budget: "))
 
 print(f"Student Name: {name}")
 print(f"Weekly Budget: {weekly_budget}")
-print("================================")
+print("=================================")
 print("  WEEKLY EXPENSE -- CATEGORIES  ")
-print("================================")
+print("=================================")
 
 expense_category = [
     ["1. Food & Drinks",       "[e.g. Lunch, snacks, coffee]"],
@@ -18,7 +18,7 @@ expense_category = [
 for item in expense_category:
     print(item[0], item[1])
 
-print("================================")
+print("=================================")
 
 expenses = []
 
@@ -45,9 +45,9 @@ for i in range(4):
     expenses.append({"choice":choice-1, "description":description, "amount":amount, "tag":tag})
 
 
-print("================================")
+print("=================================")
 print(f"  {name.upper()} -- WEEKLY EXPENSE LOG  ")
-print("================================")
+print("=================================")
 
 print(f"Weekly Budget: P{weekly_budget:.2f}")
 
@@ -62,7 +62,7 @@ for exp in range(len(expenses)):
 
 
 
-print("---------------------------------")
+print("----------------------------------")
 
 spent = 0
 for expense in expenses:
@@ -75,4 +75,4 @@ if remained >= 0:
     print("Status: Budget OK! Keep it up.")
 elif remained < 0:
     print("Status: Budget OK! Keep it up.")
-print("================================")
+print("=================================")
