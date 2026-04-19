@@ -29,10 +29,15 @@ for i in range(4):
 
     choice = int(input("Category (1 - 5 or 0 to skip): "))
 
-    if choice != 0:
-        print(expense_category[choice - 1][0])
-    else:
+    if choice >=1 and choice <= 5:
+        print(expense_category[choice-1][0])
+    elif choice == 0:
         continue
+    else:
+        while choice > 5:
+            print("Invalid Input. Try again")
+            choice = int(input("Category (1 - 5 or 0 to skip): "))
+        
     
     description = input("Description: ")
     amount = int(input("Amount: "))
