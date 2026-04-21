@@ -47,7 +47,7 @@ for i in range(4):
         print(tag)
     
     
-    expenses.append({"choice":choice-1, "description":description, "amount":amount, "tag":tag})
+    expenses.append([choice - 1, description, amount, tag])
 
 
 print("=================================")
@@ -58,12 +58,13 @@ print(f"Weekly Budget: P{weekly_budget:.2f}")
 
 
 for exp in range(len(expenses)):
+    choice = expenses[exp][0]
+    description = expenses[exp][1]
+    amount = expenses[exp][2]
+    tag = expenses[exp][3]
 
-
-    print(f"[{exp + 1}] {expense_category[expenses[exp]["choice"]][0]}")
-    
-    print(expenses[exp]["description"])
-    print(expenses[exp]["amount"])
+    print(f"[{exp + 1}] {expense_category[choice][0]}")
+    print(f"    {description} - P{amount:.2f} {tag}")
 
 
 
@@ -71,7 +72,7 @@ print("----------------------------------")
 
 spent = 0
 for expense in expenses:
-    spent += expense["amount"]
+    spent += expense[2]
 print(f"Total Expense: P{spent:.2f}")
 remained = weekly_budget - spent
 print(f"Remaining: P{remained:.2f}")
@@ -79,5 +80,5 @@ print(f"Remaining: P{remained:.2f}")
 if remained >= 0:
     print("Status: Budget OK! Keep it up.")
 elif remained < 0:
-    print("Status: Budget OK! Keep it up.")
+    print("Overspent! Reduce Spending")
 print("=================================")
