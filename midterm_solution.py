@@ -77,8 +77,8 @@ print(f"Total Expense: P{spent:.2f}")
 remained = weekly_budget - spent
 print(f"Remaining: P{remained:.2f}")
 
-if remained >= 0:
+if remained > 0:
     print("Status: Budget OK! Keep it up.")
-elif remained < 0:
+else:
     print("Overspent! Reduce Spending")
 print("=================================")
